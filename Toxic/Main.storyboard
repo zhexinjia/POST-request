@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4590">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="394" translatesAutoresizingMaskIntoConstraints="NO" buttonType="roundedRect">
+                                <rect key="frame" x="70" y="478" width="460" height="32"/>
+                                <connections>
+                                    <action selector="ClickedButton:" destination="BYZ-38-t0r" id="1861" eventType="touchUpInside"/>
+                                </connections>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Sign In"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Toxic Wing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="841" translatesAutoresizingMaskIntoConstraints="NO" minimumFontSize="9">
+                                <rect key="frame" x="120" y="94" width="360" height="48"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="1"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" id="1859" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="172" width="560" height="216"/>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2965" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="70" y="418" width="460" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint id="2971" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="394" secondAttribute="trailing" constant="50"/>
+                            <constraint id="2972" firstItem="394" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50"/>
+                            <constraint id="2975" firstItem="394" firstAttribute="top" secondItem="2965" secondAttribute="bottom" constant="30"/>
+                            <constraint id="2976" firstItem="841" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100"/>
+                            <constraint id="2978" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="841" secondAttribute="trailing" constant="100"/>
+                            <constraint id="2979" firstItem="841" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30"/>
+                            <constraint id="2980" firstItem="1859" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="2982" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="1859" secondAttribute="trailing"/>
+                            <constraint id="2983" firstItem="1859" firstAttribute="top" secondItem="841" secondAttribute="bottom" constant="30"/>
+                            <constraint id="2995" firstItem="2965" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50"/>
+                            <constraint id="2997" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="2965" secondAttribute="trailing" constant="50"/>
+                            <constraint id="2998" firstItem="2965" firstAttribute="top" secondItem="1859" secondAttribute="bottom" constant="30"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="signInButton" destination="394" id="name-outlet-394"/>
+                        <outlet property="showID" destination="841" id="name-outlet-841"/>
+                        <outlet property="pwField" destination="2965" id="name-outlet-2965"/>
+                        <outlet property="storePicker" destination="1859" id="name-outlet-1859"/>
+                    </connections>
+                    <navigationItem title="Title" id="4631" key="navigationItem"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-463" y="-764"/>
+        </scene>
+        <scene sceneID="4589">
+            <objects>
+                <navigationController id="4590" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4592">
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="4632" destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4593" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1219" y="-761"/>
+        </scene>
+        <scene sceneID="15354">
+            <objects>
+                <viewController id="15355" sceneMemberID="viewController" customClass="DetailViewController" storyboardIdentifier="DetailController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="15352"/>
+                        <viewControllerLayoutGuide type="bottom" id="15353"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="15356">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="15831" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="372" y="520" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="15355" id="15832" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17804" translatesAutoresizingMaskIntoConstraints="NO" preferredMaxLayoutWidth="110">
+                                <rect key="frame" x="60" y="80" width="110" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="17810" firstAttribute="height" constant="40"/>
+                                    <constraint id="18459" firstItem="17804" firstAttribute="width" constant="110"/>
+                                </constraints>
+                            </label>
+                            <pickerView contentMode="scaleToFill" id="17805" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="250" y="80" width="290" height="40"/>
+                                <constraints>
+                                    <constraint id="18457" firstAttribute="height" constant="40"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17825" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="60" y="160" width="110" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="17826" firstAttribute="height" constant="40"/>
+                                    <constraint id="17847" firstAttribute="width" constant="110"/>
+                                </constraints>
+                            </label>
+                            <pickerView contentMode="scaleToFill" id="17827" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="250" y="160" width="290" height="40"/>
+                                <constraints>
+                                    <constraint id="17828" firstAttribute="height" constant="40"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17829" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="60" y="240" width="110" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="17830" firstAttribute="height" constant="40"/>
+                                    <constraint id="17850" firstAttribute="width" constant="110"/>
+                                </constraints>
+                            </label>
+                            <pickerView contentMode="scaleToFill" id="17831" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="250" y="240" width="290" height="40"/>
+                                <constraints>
+                                    <constraint id="17832" firstAttribute="height" constant="40"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17833" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="60" y="320" width="110" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="17834" firstAttribute="height" constant="40"/>
+                                    <constraint id="17853" firstAttribute="width" constant="110"/>
+                                </constraints>
+                            </label>
+                            <pickerView contentMode="scaleToFill" id="17835" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="250" y="320" width="290" height="40"/>
+                                <constraints>
+                                    <constraint id="17836" firstAttribute="height" constant="40"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17837" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="60" y="400" width="110" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="17838" firstAttribute="height" constant="40"/>
+                                    <constraint id="17856" firstAttribute="width" constant="110"/>
+                                </constraints>
+                            </label>
+                            <pickerView contentMode="scaleToFill" id="17839" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="250" y="400" width="290" height="40"/>
+                                <constraints>
+                                    <constraint id="17840" firstAttribute="height" constant="40"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="20984" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="71" y="524" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="20990" firstAttribute="width" constant="200"/>
+                                </constraints>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint id="17811" firstItem="17804" firstAttribute="top" secondItem="15352" secondAttribute="bottom" constant="60"/>
+                            <constraint id="17812" firstItem="17804" firstAttribute="leading" secondItem="15356" secondAttribute="leadingMargin" constant="40"/>
+                            <constraint id="17857" firstItem="17825" firstAttribute="leading" secondItem="15356" secondAttribute="leadingMargin" constant="40"/>
+                            <constraint id="17858" firstItem="17825" firstAttribute="top" secondItem="17804" secondAttribute="bottom" constant="40"/>
+                            <constraint id="17870" firstItem="17827" firstAttribute="leading" secondItem="17825" secondAttribute="trailing" constant="80"/>
+                            <constraint id="17871" firstItem="15356" firstAttribute="trailingMargin" secondItem="17827" secondAttribute="trailing" constant="40"/>
+                            <constraint id="17872" firstItem="17829" firstAttribute="top" secondItem="17825" secondAttribute="bottom" constant="40"/>
+                            <constraint id="17873" firstItem="17829" firstAttribute="leading" secondItem="15356" secondAttribute="leadingMargin" constant="40"/>
+                            <constraint id="17874" firstItem="17833" firstAttribute="leading" secondItem="15356" secondAttribute="leadingMargin" constant="40"/>
+                            <constraint id="17875" firstItem="17837" firstAttribute="leading" secondItem="15356" secondAttribute="leadingMargin" constant="40"/>
+                            <constraint id="17876" firstItem="17831" firstAttribute="top" secondItem="17827" secondAttribute="bottom" constant="40"/>
+                            <constraint id="17877" firstItem="17831" firstAttribute="leading" secondItem="17829" secondAttribute="trailing" constant="80"/>
+                            <constraint id="17878" firstItem="15356" firstAttribute="trailingMargin" secondItem="17831" secondAttribute="trailing" constant="40"/>
+                            <constraint id="17879" firstItem="17833" firstAttribute="top" secondItem="17829" secondAttribute="bottom" constant="40"/>
+                            <constraint id="17880" firstItem="17835" firstAttribute="top" secondItem="17831" secondAttribute="bottom" constant="40"/>
+                            <constraint id="17881" firstItem="17835" firstAttribute="leading" secondItem="17833" secondAttribute="trailing" constant="80"/>
+                            <constraint id="17882" firstItem="15356" firstAttribute="trailingMargin" secondItem="17835" secondAttribute="trailing" constant="40"/>
+                            <constraint id="17883" firstItem="17837" firstAttribute="top" secondItem="17833" secondAttribute="bottom" constant="40"/>
+                            <constraint id="17884" firstItem="17839" firstAttribute="top" secondItem="17835" secondAttribute="bottom" constant="40"/>
+                            <constraint id="17885" firstItem="17839" firstAttribute="leading" secondItem="17837" secondAttribute="trailing" constant="80"/>
+                            <constraint id="17886" firstItem="15356" firstAttribute="trailingMargin" secondItem="17839" secondAttribute="trailing" constant="40"/>
+                            <constraint id="18460" firstItem="17805" firstAttribute="leading" secondItem="17804" secondAttribute="trailing" constant="80"/>
+                            <constraint id="18461" firstItem="17805" firstAttribute="top" secondItem="15352" secondAttribute="bottom" constant="60"/>
+                            <constraint id="18462" firstItem="15356" firstAttribute="trailingMargin" secondItem="17805" secondAttribute="trailing" constant="40"/>
+                            <constraint id="18463" firstItem="17827" firstAttribute="top" secondItem="17805" secondAttribute="bottom" constant="40"/>
+                            <constraint id="20986" firstItem="15356" firstAttribute="trailing" secondItem="15831" secondAttribute="trailing" constant="182"/>
+                            <constraint id="20987" firstItem="15356" firstAttribute="bottom" secondItem="15831" secondAttribute="bottom" constant="50"/>
+                            <constraint id="20988" firstItem="20984" firstAttribute="leading" secondItem="15356" secondAttribute="leading" constant="71"/>
+                            <constraint id="20989" firstItem="15356" firstAttribute="bottom" secondItem="20984" secondAttribute="bottom" constant="55"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timePicker1" destination="17805" id="name-outlet-17805"/>
+                        <outlet property="timePicker2" destination="17827" id="name-outlet-17827"/>
+                        <outlet property="timePicker3" destination="17831" id="name-outlet-17831"/>
+                        <outlet property="timePicker4" destination="17835" id="name-outlet-17835"/>
+                        <outlet property="timePicker5" destination="17839" id="name-outlet-17839"/>
+                        <outlet property="testLabel" destination="20984" id="name-outlet-20984"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15357" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="253" y="-761"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="meeting.png" width="64" height="64"/>
+    </resources>
+</document>
