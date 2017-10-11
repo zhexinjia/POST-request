@@ -16,10 +16,6 @@ namespace Toxic
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel testLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIPickerView timePicker1 { get; set; }
 
         [Outlet]
@@ -42,13 +38,12 @@ namespace Toxic
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void buttonClicked (UIKit.UIButton sender);
 
+        [Action ("Reload:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Reload (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
-            if (testLabel != null) {
-                testLabel.Dispose ();
-                testLabel = null;
-            }
-
             if (timePicker1 != null) {
                 timePicker1.Dispose ();
                 timePicker1 = null;

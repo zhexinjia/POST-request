@@ -31,6 +31,83 @@ namespace Toxic
         public override void LoadView()
         {
             base.LoadView();
+            ReloadCallBack();
+        }
+
+		//get information from server
+		private void getInfo()
+		{
+		    WebClient client = new WebClient();
+			var scheduleInfo = client.UploadString("http://thetoxicwings.com/getTimes.php", "");
+			storeInformation = JsonConvert.DeserializeObject<List<StoreInfo>>(scheduleInfo);
+		}
+
+		//return the single store info
+		private StoreInfo getSingleSchedule()
+		{
+			foreach (var dataItem in storeInformation)
+			{
+				if (dataItem.storename.Equals(passedValue))
+				{
+					return dataItem;
+				}
+			}
+			return null;
+		}
+
+        partial void buttonClicked(UIButton sender)
+        {
+            WebClient client = new WebClient();
+            client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+            string sql = "sql=" + getSQL();
+            var param = new System.Collections.Specialized.NameValueCollection();
+            param.Add("sql", getSQL());
+
+            string method = "POST";
+            string message = client.UploadString("http://thetoxicwings.com/setTimes.php", method, sql);
+
+            if (message.Equals("success!")){
+                UIAlertView alert = new UIAlertView()
+                {
+                    Title = "Update Success!",
+                    Message = "Schedule Updated"
+                };
+                alert.AddButton("OK");
+                alert.Show();
+            }else{
+                UIAlertView alert = new UIAlertView()
+                {
+                    Title = "Update Failed",
+                    Message = "Please Check your Internet Connection or contact Developer"
+                };
+                alert.AddButton("OK");
+                alert.Show();
+            }
+        }
+
+        //return sql comment used to update database
+        private String getSQL(){
+            var name = currentStore.storename;
+            List<String> columns = new List<string> { "time1", "time2", "time3", "time4", "time5" };
+            string sql = "UPDATE times SET ";
+            for (int i = 0; i < columns.Count; i++){
+                sql += columns[i] + " = " + numbers[i];
+                if (i != columns.Count-1){
+                    sql += ", ";
+                }
+            }
+            sql += " WHERE storename = '" + name + "';";
+            return sql;
+        }
+
+        partial void Reload(UIButton sender)
+        {
+            getInfo();
+            this.ReloadCallBack();
+        }
+
+        //reload the screen
+        private void ReloadCallBack(){
             currentStore = getSingleSchedule();
             numbers[0] = currentStore.time1;
             numbers[1] = currentStore.time2;
@@ -39,7 +116,8 @@ namespace Toxic
             numbers[4] = currentStore.time5;
 
             var list = new List<int>();
-            for (int i = 0; i < 21; i++){
+            for (int i = 0; i < 21; i++)
+            {
                 list.Add(i);
             }
 
@@ -50,7 +128,7 @@ namespace Toxic
             var timeViewModel4 = new storePickerModel(list);
             var timeViewModel5 = new storePickerModel(list);
 
-            timeViewModel1.storeChanged += (sender, e) => 
+            timeViewModel1.storeChanged += (sender, e) =>
             {
                 numbers[0] = Int32.Parse(timeViewModel1.selectedStore);
             };
@@ -108,63 +186,10 @@ namespace Toxic
                 timePickerList[i].Model = ModelList[i];
             }
             */
-
         }
 
-		//get information from server
-		private void getInfo()
-		{
-		    WebClient client = new WebClient();
-			var scheduleInfo = client.UploadString("http://thetoxicwings.com/getTimes.php", "");
-			storeInformation = JsonConvert.DeserializeObject<List<StoreInfo>>(scheduleInfo);
-		}
 
-		//return the single store info
-		private StoreInfo getSingleSchedule()
-		{
-			foreach (var dataItem in storeInformation)
-			{
-				if (dataItem.storename.Equals(passedValue))
-				{
-					return dataItem;
-				}
-			}
-			return null;
-		}
 
-        partial void buttonClicked(UIButton sender)
-        {
-            
-            //testLabel.Text = getSingleSchedule().storename;
-            WebClient client = new WebClient();
-            client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
-            string sql = "sql=" + getSQL();
-            var param = new System.Collections.Specialized.NameValueCollection();
-            param.Add("sql", getSQL());
 
-            string method = "POST";
-            string message = client.UploadString("http://thetoxicwings.com/setTimes.php", method, sql);
-
-            testLabel.Text = message;
-            if (message.Equals("success!")){
-                //popUp success window
-            }else{
-                //popUp fail window
-            }
-        }
-
-        private String getSQL(){
-            var name = currentStore.storename;
-            List<String> columns = new List<string> { "time1", "time2", "time3", "time4", "time5" };
-            string sql = "UPDATE times SET ";
-            for (int i = 0; i < columns.Count; i++){
-                sql += columns[i] + " = " + numbers[i];
-                if (i != columns.Count-1){
-                    sql += ", ";
-                }
-            }
-            sql += " WHERE storename = '" + name + "';";
-            return sql;
-        }
     }
 }

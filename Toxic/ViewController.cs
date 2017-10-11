@@ -44,7 +44,13 @@ namespace Toxic
                 detailView.passedValue = storeLocation;
 				this.NavigationController.PushViewController(detailView, true);
             }else{
-                showID.Text = "wrong pw";
+                UIAlertView alert = new UIAlertView()
+                {
+                    Title = "Wrong PassCode",
+                    Message = "PassCode Incorrect..."
+                };
+                alert.AddButton("OK");
+                alert.Show();
             }
 
         }

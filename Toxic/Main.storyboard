@@ -39,7 +39,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2965" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="70" y="418" width="460" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <constraints>
@@ -97,8 +97,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="15831" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="372" y="520" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="451" y="490" width="89" height="30"/>
+                                <state key="normal" title="Update Time">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -185,15 +185,15 @@
                                     <constraint id="17840" firstAttribute="height" constant="40"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="20984" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="71" y="524" width="200" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="20990" firstAttribute="width" constant="200"/>
-                                </constraints>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28532" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="60" y="490" width="115" height="30"/>
+                                <state key="normal" title="Reload Schedule">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Reload:" destination="15355" id="28603" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint id="17811" firstItem="17804" firstAttribute="top" secondItem="15352" secondAttribute="bottom" constant="60"/>
@@ -221,10 +221,10 @@
                             <constraint id="18461" firstItem="17805" firstAttribute="top" secondItem="15352" secondAttribute="bottom" constant="60"/>
                             <constraint id="18462" firstItem="15356" firstAttribute="trailingMargin" secondItem="17805" secondAttribute="trailing" constant="40"/>
                             <constraint id="18463" firstItem="17827" firstAttribute="top" secondItem="17805" secondAttribute="bottom" constant="40"/>
-                            <constraint id="20986" firstItem="15356" firstAttribute="trailing" secondItem="15831" secondAttribute="trailing" constant="182"/>
-                            <constraint id="20987" firstItem="15356" firstAttribute="bottom" secondItem="15831" secondAttribute="bottom" constant="50"/>
-                            <constraint id="20988" firstItem="20984" firstAttribute="leading" secondItem="15356" secondAttribute="leading" constant="71"/>
-                            <constraint id="20989" firstItem="15356" firstAttribute="bottom" secondItem="20984" secondAttribute="bottom" constant="55"/>
+                            <constraint id="28533" firstItem="28532" firstAttribute="top" secondItem="17837" secondAttribute="bottom" constant="50"/>
+                            <constraint id="28534" firstItem="28532" firstAttribute="leading" secondItem="15356" secondAttribute="leadingMargin" constant="40"/>
+                            <constraint id="28535" firstItem="15356" firstAttribute="trailingMargin" secondItem="15831" secondAttribute="trailing" constant="40"/>
+                            <constraint id="28536" firstItem="15831" firstAttribute="top" secondItem="17839" secondAttribute="bottom" constant="50"/>
                         </constraints>
                     </view>
                     <connections>
@@ -233,7 +233,6 @@
                         <outlet property="timePicker3" destination="17831" id="name-outlet-17831"/>
                         <outlet property="timePicker4" destination="17835" id="name-outlet-17835"/>
                         <outlet property="timePicker5" destination="17839" id="name-outlet-17839"/>
-                        <outlet property="testLabel" destination="20984" id="name-outlet-20984"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15357" userLabel="First Responder" sceneMemberID="firstResponder"/>
